@@ -19,12 +19,20 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-ZFZ12WBMV0');
+      setTimeout(() => {
+        window.location.href = "https://github.com/finternet-io/dedi";
+      }, 1000);
     </script>
+    <noscript>
+      <!-- Fallback if JS is disabled: immediate redirect or manual link -->
+      <meta http-equiv="refresh" content="0; url=https://github.com/finternet-io/dedi">
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <p>Redirecting to the github site… If you are not redirected, <a href="https://github.com/finternet-io/dedi">click here</a>.</p>
+    <!-- <script type="module" src="/src/main.tsx"></script> -->
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script> -->
   </body>
 </html>
