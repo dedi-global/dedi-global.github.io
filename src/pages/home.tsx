@@ -148,7 +148,7 @@ export default function Home() {
               <div className="mb-6">
                 <Badge className="inline-flex items-center px-3 py-1 bg-blue-100 text-primary hover:bg-blue-200">
                   <Shield className="w-4 h-4 mr-2" />
-                  Blockchain-Powered Trust Infrastructure
+                  Cryptographically-Powered Trust Infrastructure
                 </Badge>
               </div>
               
@@ -393,7 +393,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-success-green mr-3" />
-                <span className="text-gray-700">Blockchain governance for automated scalability</span>
+                <span className="text-gray-700">Ledger governance for automated scalability</span>
               </div>
               <div className="flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-success-green mr-3" />
@@ -492,12 +492,12 @@ export default function Home() {
                 <a href="https://dhiway.com" className="inline-block hover:opacity-80 transition-opacity" target="_blank" rel="noopener">
                   <Card className="bg-white shadow-md hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
-                      <div className="text-2xl font-bold text-professional-gray mb-2">Dhiway</div>
+                      <div className="text-2xl font-bold mb-2" style="text-color:0x">Dhiway</div>
                       <p className="text-sm text-gray-600">Reshaping the digital future</p>
                     </CardContent>
                   </Card>
                 </a>
-                <p className="text-sm text-gray-500 mt-4">Creating decentralised trust networks for consent-based data exchange with CORD blockchain</p>
+                <p className="text-sm text-gray-500 mt-4">Creating decentralised trust networks for consent-based data exchange with CORD Network</p>
               </CardContent>
             </Card>
           </div>
