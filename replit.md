@@ -1,6 +1,6 @@
 # Overview
 
-DeDi (Decentralized Directory Protocol) is a full-stack web application built to enhance trust in digital transactions by creating a universal way to verify public information instantly. The application transforms fragmented registries into AI-ready directories through standardized API specifications for accessing public registries. This is a modern React-based frontend with an Express.js backend, using PostgreSQL for data persistence and featuring a comprehensive UI component library.
+DeDi (Decentralized Directory Protocol) is a frontend-only web application built to showcase the protocol's value proposition for enhancing trust in digital transactions. The application serves as a professional homepage highlighting how DeDi creates a universal way to verify public information instantly through standardized API specifications. This is a modern React-based static website with comprehensive UI components, designed for easy deployment as a static site.
 
 # User Preferences
 
@@ -17,31 +17,19 @@ Preferred communication style: Simple, everyday language.
 - **Form Handling**: React Hook Form with Zod validation through @hookform/resolvers
 - **Design System**: shadcn/ui component library with "new-york" style variant
 
-## Backend Architecture
-- **Runtime**: Node.js with TypeScript and ES modules
-- **Framework**: Express.js for REST API endpoints
-- **Build System**: esbuild for production builds, tsx for development
-- **API Structure**: Centralized route registration system with middleware for logging and error handling
-- **Storage Layer**: Abstracted storage interface with in-memory implementation (MemStorage) and PostgreSQL support
-
-## Database & ORM
-- **Database**: PostgreSQL with Neon Database serverless driver
-- **ORM**: Drizzle ORM with migrations support
-- **Schema Management**: Type-safe schema definitions with Zod validation
-- **Session Management**: PostgreSQL session store using connect-pg-simple
-
-## Authentication & Security
-- **Session-based authentication** with PostgreSQL session storage
-- **Password hashing** and user management system
-- **CORS and security middleware** for API protection
-- **Type-safe API contracts** between frontend and backend
+## Static Site Architecture
+- **Build System**: Vite for fast development and optimized production builds
+- **Deployment**: Static site deployment ready for platforms like Vercel, Netlify, or GitHub Pages
+- **Assets**: Self-contained with no external dependencies or API requirements
+- **Structure**: Single-page application with clean, professional design
 
 ## Development & Build Pipeline
-- **Monorepo structure** with shared types and schemas
+- **Frontend-only structure** optimized for static deployment
 - **Hot module replacement** in development with Vite
 - **TypeScript compilation** with strict type checking
-- **Path aliases** for clean imports across client, server, and shared code
+- **Path aliases** for clean imports across client components
 - **Development tooling** includes Replit-specific plugins for enhanced development experience
+- **Simplified deployment** - no server infrastructure required
 
 ## Key Design Patterns
 - **Shared schema approach**: Common type definitions between frontend and backend
