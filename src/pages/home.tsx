@@ -492,7 +492,7 @@ export default function Home() {
                 <a href="https://dhiway.com" className="inline-block hover:opacity-80 transition-opacity" target="_blank" rel="noopener">
                   <Card className="bg-white shadow-md hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
-                      <div className="text-2xl font-bold mb-2" style="text-color:0x">Dhiway</div>
+                      <div className="text-2xl font-bold mb-2">Dhiway</div>
                       <p className="text-sm text-gray-600">Reshaping the digital future</p>
                     </CardContent>
                   </Card>
