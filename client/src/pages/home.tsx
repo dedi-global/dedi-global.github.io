@@ -186,11 +186,16 @@ export default function Home() {
             </div>
             
             <div className="lg:pl-8">
-              <img 
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Digital security and blockchain technology visualization" 
-                className="rounded-2xl shadow-2xl w-full h-auto" 
-              />
+              <div className="relative">
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                  <div className="relative z-10 text-center text-white">
+                    <Shield className="w-24 h-24 mx-auto mb-4 opacity-90" />
+                    <div className="text-2xl font-bold mb-2">DeDi Protocol</div>
+                    <div className="text-lg opacity-90">Trust Infrastructure</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -243,11 +248,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <img 
-                src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Blockchain technology network visualization" 
-                className="rounded-2xl shadow-xl w-full h-auto" 
-              />
+              <div className="relative">
+                <div className="w-full h-80 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl shadow-xl flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `url("data:image/svg+xml,<svg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><g fill='%23374151' fill-opacity='0.3'><path d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/></g></svg>")`,
+                    backgroundSize: '40px 40px'
+                  }}></div>
+                  <div className="relative z-10 text-center text-white">
+                    <Database className="w-20 h-20 mx-auto mb-4 opacity-90" />
+                    <div className="text-xl font-bold mb-2">Universal API</div>
+                    <div className="text-sm opacity-90">Standardized Access</div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div>
@@ -369,45 +382,35 @@ export default function Home() {
       {/* dedi.global Platform */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                dedi.global – Ready to Use Solution
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                A hosted platform by the Network for Humanity Foundation, enabling registrars to effortlessly publish and manage directories on robust decentralized infrastructure.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-green mr-3" />
-                  <span className="text-gray-700">Blockchain governance for automated scalability</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-green mr-3" />
-                  <span className="text-gray-700">Enhanced trust with cryptographic guarantees</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-success-green mr-3" />
-                  <span className="text-gray-700">Compatible with existing systems and technologies</span>
-                </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              dedi.global – Ready to Use Solution
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              A hosted platform by the Network for Humanity Foundation, enabling registrars to effortlessly publish and manage directories on robust decentralized infrastructure.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-success-green mr-3" />
+                <span className="text-gray-700">Blockchain governance for automated scalability</span>
               </div>
-              
-              <Button asChild size="lg" className="bg-trust-blue hover:bg-blue-700 shadow-lg">
-                <a href="https://publish.dedi.global" target="_blank" rel="noopener">
-                  <ExternalLink className="w-5 h-5 mr-2" />
-                  Access dedi.global
-                </a>
-              </Button>
+              <div className="flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-success-green mr-3" />
+                <span className="text-gray-700">Enhanced trust with cryptographic guarantees</span>
+              </div>
+              <div className="flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-success-green mr-3" />
+                <span className="text-gray-700">Compatible with existing systems and technologies</span>
+              </div>
             </div>
             
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Business collaboration and partnership" 
-                className="rounded-2xl shadow-xl w-full h-auto" 
-              />
-            </div>
+            <Button asChild size="lg" className="bg-trust-blue hover:bg-blue-700 shadow-lg">
+              <a href="https://publish.dedi.global" target="_blank" rel="noopener">
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Access dedi.global
+              </a>
+            </Button>
           </div>
         </div>
       </section>
