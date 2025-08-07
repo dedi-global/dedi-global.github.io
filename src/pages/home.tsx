@@ -60,7 +60,7 @@ export default function Home() {
             </div>
             
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="ml-10 flex items-baseline space-x-6">
                 <button 
                   onClick={() => scrollToSection('features')} 
                   className="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
@@ -82,6 +82,11 @@ export default function Home() {
                 <Button asChild className="bg-trust-blue hover:bg-blue-700">
                   <a href="https://publish.dedi.global" target="_blank" rel="noopener">
                     Get Started
+                  </a>
+                </Button>
+                <Button asChild className="bg-trust-blue hover:bg-blue-700">
+                  <a href={import.meta.env.VITE_EXPLORER_ENDPOINT || "http://localhost:3000"} target="_blank" rel="noopener">
+                    Explore
                   </a>
                 </Button>
               </div>
@@ -123,6 +128,11 @@ export default function Home() {
                 <Button asChild className="w-full mt-2 bg-trust-blue hover:bg-blue-700">
                   <a href="https://publish.dedi.global" target="_blank" rel="noopener">
                     Get Started
+                  </a>
+                </Button>
+                <Button asChild className="w-full mt-2 bg-trust-blue hover:bg-blue-700">
+                  <a href={import.meta.env.VITE_EXPLORER_ENDPOINT || "http://localhost:3000"} target="_blank" rel="noopener">
+                    Explore
                   </a>
                 </Button>
               </div>
@@ -540,7 +550,7 @@ export default function Home() {
             </div>
           </div>
           
-          <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary shadow-lg">
+          <Button asChild variant="outline" size="lg" className="border-2 border-white text-primary hover:bg-blue-700 hover:text-white hover:border-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
             <a href="https://publish.dedi.global" target="_blank" rel="noopener">
               <Rocket className="w-5 h-5 mr-2" />
               Start Building on DeDi

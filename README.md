@@ -29,7 +29,7 @@ A professional, frontend-only homepage showcasing the DeDi (Decentralized Direct
 npm install
 
 # Start development server
-cd client && npx vite --host 0.0.0.0 --port 5001
+npx vite --host 0.0.0.0 --port 5001
 ```
 
 The application will be available at `http://localhost:5001`
