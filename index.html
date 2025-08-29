@@ -786,32 +786,60 @@
 
                 <!-- Simple Steps -->
                 <div class="mt-12">
-                    <h3 class="text-2xl font-bold text-center mb-8">Get started in 3 steps</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-blue-600">1</span>
+                    <h3 class="text-3xl font-bold text-center mb-16">Get started in 3 steps</h3>
+                    <div class="relative max-w-4xl mx-auto px-4">
+                        <!-- Horizontal Connecting Line for Desktop -->
+                        <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-300"></div>
+                        
+                        <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-8">
+                            <!-- Step 1 -->
+                            <div class="flex items-start md:flex-col md:items-center text-left md:text-center w-full">
+                                <div class="relative z-10 bg-white p-2 rounded-full">
+                                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-md">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-6 md:ml-0 md:mt-6 flex-1">
+                                    <p class="text-gray-500 font-semibold">STEP 1</p>
+                                    <h4 class="text-xl font-semibold my-1">Claim your namespace</h4>
+                                    <p class="text-gray-600 text-sm">Register your org on DeDi.global</p>
+                                </div>
                             </div>
-                            <h4 class="font-semibold mb-2">Claim your namespace</h4>
-                            <p class="text-gray-600 text-sm">Register your org on DeDi.global</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-green-600">2</span>
+
+                            <!-- Step 2 -->
+                            <div class="flex items-start md:flex-col md:items-center text-left md:text-center w-full">
+                                <div class="relative z-10 bg-white p-2 rounded-full">
+                                    <div class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-md">
+                                        <i class="fas fa-upload"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-6 md:ml-0 md:mt-6 flex-1">
+                                    <p class="text-gray-500 font-semibold">STEP 2</p>
+                                    <h4 class="text-xl font-semibold my-1">Publish a directory</h4>
+                                    <p class="text-gray-600 text-sm">Use our UI or APIs to publish your first directory</p>
+                                </div>
                             </div>
-                            <h4 class="font-semibold mb-2">Publish a directory</h4>
-                            <p class="text-gray-600 text-sm">Use our UI or APIs to publish your first directory</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-purple-600">3</span>
+
+                            <!-- Step 3 -->
+                            <div class="flex items-start md:flex-col md:items-center text-left md:text-center w-full">
+                                <div class="relative z-10 bg-white p-2 rounded-full">
+                                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-md">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-6 md:ml-0 md:mt-6 flex-1">
+                                    <p class="text-gray-500 font-semibold">STEP 3</p>
+                                    <h4 class="text-xl font-semibold my-1">Connect agents & apps</h4>
+                                    <p class="text-gray-600 text-sm">Let wallets, agents, and businesses verify instantly</p>
+                                </div>
                             </div>
-                            <h4 class="font-semibold mb-2">Connect agents & apps</h4>
-                            <p class="text-gray-600 text-sm">Let wallets, bots, and businesses verify instantly</p>
                         </div>
                     </div>
-                    <div class="text-center mt-8">
-                        <p class="text-lg font-semibold text-blue-600">All for free today</p>
+                    <div class="text-center mt-16">
+                        <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-xl font-bold">
+                            <i class="fas fa-gift mr-3"></i>
+                            Start for Free Today
+                        </a>
                     </div>
                 </div>
             </div>
