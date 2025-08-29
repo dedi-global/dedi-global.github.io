@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeDi - Three Modes of Implementation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1a73e8 0%, #34a853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .slide-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+        .mode-card {
+            transition: all 0.3s ease;
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .mode-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .recommended-card {
+            background: linear-gradient(135deg, #1a73e8 0%, #34a853 100%);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(26, 115, 232, 0.3);
+        }
+        .recommended-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .feature-list {
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+        .time-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 0.875rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .default-button {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        .default-button:hover {
+            background: #d1d5db;
+        }
+        .recommended-button {
+            background: white;
+            color: #1a73e8;
+        }
+        .recommended-button:hover {
+            box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .mode-card:nth-child(1) { animation-delay: 0.1s; }
+        .mode-card:nth-child(2) { animation-delay: 0.2s; }
+        .mode-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide Header -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="text-5xl font-bold mb-4 gradient-text">Choose Your Path to DeDi</h1>
+            <p class="text-xl text-gray-600">Three implementation options to fit your organization's needs</p>
+        </div>
+
+        <!-- Three Modes Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Mode 1: Self-Implementation -->
+            <div class="mode-card animate-fade-in">
+                <div class="mb-6">
+                    <div class="text-4xl mb-4 text-gray-400">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">Self-Implementation</h2>
+                    <p class="text-gray-600">For technical teams who want full control</p>
+                </div>
+                
+                <ul class="feature-list space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Integrate DeDi APIs directly</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Complete control over implementation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Host your own nodes</span>
+                    </li>
+                </ul>
+                
+                <div class="time-indicator text-gray-500">
+                    <i class="fas fa-clock"></i>
+                    <span>Setup time: 2-4 weeks</span>
+                </div>
+                
+                <a href="#" class="action-button default-button">
+                    View Documentation
+                </a>
+            </div>
+
+            <!-- Mode 2: Third-Party Provider -->
+            <div class="mode-card animate-fade-in">
+                <div class="mb-6">
+                    <div class="text-4xl mb-4 text-gray-400">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">Third-Party Provider</h2>
+                    <p class="text-gray-600">Work with certified DeDi partners</p>
+                </div>
+                
+                <ul class="feature-list space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Pre-built solutions available</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Professional implementation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                        <span>Ongoing support included</span>
+                    </li>
+                </ul>
+                
+                <div class="time-indicator text-gray-500">
+                    <i class="fas fa-clock"></i>
+                    <span>Setup time: 1-2 weeks</span>
+                </div>
+                
+                <a href="#" class="action-button default-button">
+                    Find Partners
+                </a>
+            </div>
+
+            <!-- Mode 3: DeDi.global SaaS (Recommended) -->
+            <div class="mode-card recommended-card animate-fade-in">
+                <div class="recommended-badge">RECOMMENDED</div>
+                
+                <div class="mb-6">
+                    <div class="text-4xl mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2">DeDi.global SaaS</h2>
+                    <p class="opacity-90">The fastest, easiest way to go live</p>
+                </div>
+                
+                <ul class="feature-list space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-3"></i>
+                        <span>Live in minutes, not weeks</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-3"></i>
+                        <span>Zero technical overhead</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-3"></i>
+                        <span>Real-time change propagation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-3"></i>
+                        <span>99.99% uptime guarantee</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-white mt-1 mr-3"></i>
+                        <span>Advanced analytics dashboard</span>
+                    </li>
+                </ul>
+                
+                <div class="time-indicator">
+                    <i class="fas fa-clock"></i>
+                    <span>Setup time: 10 minutes</span>
+                </div>
+                
+                <a href="#" class="action-button recommended-button">
+                    Start Free Trial →
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="text-center mt-12 animate-fade-in" style="animation-delay: 0.5s;">
+            <p class="text-gray-600">
+                Questions about which implementation is right for you? 
+                <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold">Contact our team →</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

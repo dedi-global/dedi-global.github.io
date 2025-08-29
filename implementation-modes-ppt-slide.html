@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1920">
+    <title>DeDi Implementation Modes - Presentation Slide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            position: relative;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1a73e8 0%, #34a853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .slide-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .modes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            flex: 1;
+            align-items: start;
+        }
+        .mode-box {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .mode-box.recommended {
+            background: linear-gradient(135deg, #1a73e8 0%, #34a853 100%);
+            color: white;
+            transform: scale(1.08);
+            box-shadow: 0 20px 50px rgba(26, 115, 232, 0.4);
+        }
+        .mode-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        .mode-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .mode-subtitle {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        .mode-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            flex-grow: 1;
+        }
+        .mode-features li {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .mode-features i {
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 24px;
+        }
+        .time-badge {
+            background: rgba(0,0,0,0.05);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .recommended-box .time-badge {
+            background: rgba(255,255,255,0.2);
+        }
+        .recommended-badge {
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dedi-logo {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            opacity: 0.6;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Slide Header -->
+        <div class="slide-header">
+            <h1 class="text-6xl font-bold mb-4">
+                <span class="gradient-text">Three Paths to DeDi Implementation</span>
+            </h1>
+            <p class="text-3xl text-gray-600">Choose the approach that fits your organization</p>
+        </div>
+
+        <!-- Three Modes -->
+        <div class="modes-container">
+            <!-- Self-Implementation -->
+            <div class="mode-box">
+                <div class="mode-icon text-gray-400">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="mode-title">Self-Implementation</h2>
+                <p class="mode-subtitle text-gray-600">Full control for technical teams</p>
+                
+                <ul class="mode-features">
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Direct API integration</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Host your own nodes</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Complete customization</span>
+                    </li>
+                </ul>
+                
+                <div class="time-badge">
+                    <i class="fas fa-clock"></i>
+                    <span>2-4 weeks setup</span>
+                </div>
+            </div>
+
+            <!-- Third-Party Provider -->
+            <div class="mode-box">
+                <div class="mode-icon text-gray-400">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h2 class="mode-title">Partner Solutions</h2>
+                <p class="mode-subtitle text-gray-600">Professional implementation</p>
+                
+                <ul class="mode-features">
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Pre-built integrations</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Expert guidance</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-green-500"></i>
+                        <span>Ongoing support</span>
+                    </li>
+                </ul>
+                
+                <div class="time-badge">
+                    <i class="fas fa-clock"></i>
+                    <span>1-2 weeks setup</span>
+                </div>
+            </div>
+
+            <!-- DeDi.global SaaS -->
+            <div class="mode-box recommended recommended-box">
+                <div class="recommended-badge">RECOMMENDED</div>
+                <div class="mode-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="mode-title">DeDi.global SaaS</h2>
+                <p class="mode-subtitle">Fastest path to production</p>
+                
+                <ul class="mode-features">
+                    <li>
+                        <i class="fas fa-check-circle text-white"></i>
+                        <span>Zero technical overhead</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-white"></i>
+                        <span>99.99% uptime SLA</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-white"></i>
+                        <span>Real-time updates</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle text-white"></i>
+                        <span>Advanced analytics</span>
+                    </li>
+                </ul>
+                
+                <div class="time-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>10 minutes setup</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DeDi Logo -->
+        <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="dedi-logo">
+            <g>
+                <path d="M 25 20 L 50 20 Q 75 20 75 50 Q 75 80 50 80 L 25 80 L 25 20" 
+                      fill="none" 
+                      stroke="#1a73e8" 
+                      stroke-width="3"
+                      opacity="0.3"/>
+                <circle cx="25" cy="20" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="50" cy="20" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="75" cy="35" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="75" cy="65" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="50" cy="80" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="25" cy="80" r="6" fill="#1a73e8" opacity="0.3"/>
+                <circle cx="25" cy="50" r="6" fill="#1a73e8" opacity="0.3"/>
+            </g>
+        </svg>
+
+        <!-- Slide Number -->
+        <div class="slide-number">
+            Slide 1
+        </div>
+    </div>
+</body>
+</html>

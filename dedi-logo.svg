@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- DeDi Logo - Clean minimalistic design representing decentralized directory network -->
+    <defs>
+        <!-- Gradient for colored version -->
+        <linearGradient id="dedi-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a73e8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34a853;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Logo Group -->
+    <g id="dedi-logo">
+        <!-- Outer D shape -->
+        <path d="M 25 20 L 50 20 Q 75 20 75 50 Q 75 80 50 80 L 25 80 L 25 20" 
+              fill="none" 
+              stroke="url(#dedi-gradient)" 
+              stroke-width="3"/>
+        
+        <!-- Network nodes representing decentralized points -->
+        <circle cx="25" cy="20" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="50" cy="20" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="75" cy="35" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="75" cy="65" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="50" cy="80" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="25" cy="80" r="6" fill="url(#dedi-gradient)"/>
+        <circle cx="25" cy="50" r="6" fill="url(#dedi-gradient)"/>
+        
+        <!-- Connection lines showing network connectivity -->
+        <line x1="25" y1="20" x2="50" y2="20" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="50" y1="20" x2="75" y2="35" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="75" y1="35" x2="75" y2="65" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="75" y1="65" x2="50" y2="80" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="50" y1="80" x2="25" y2="80" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="25" y1="80" x2="25" y2="50" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="25" y1="50" x2="25" y2="20" stroke="url(#dedi-gradient)" stroke-width="1.5" opacity="0.5"/>
+        
+        <!-- Inner connections representing data flow -->
+        <line x1="25" y1="50" x2="50" y2="50" stroke="url(#dedi-gradient)" stroke-width="1" opacity="0.3" stroke-dasharray="2,2"/>
+        <line x1="50" y1="50" x2="75" y2="50" stroke="url(#dedi-gradient)" stroke-width="1" opacity="0.3" stroke-dasharray="2,2"/>
+    </g>
+    
+    <!-- White version for dark backgrounds (hidden by default, can be enabled with CSS) -->
+    <g id="dedi-logo-white" style="display: none;">
+        <!-- Outer D shape -->
+        <path d="M 25 20 L 50 20 Q 75 20 75 50 Q 75 80 50 80 L 25 80 L 25 20" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="3"/>
+        
+        <!-- Network nodes -->
+        <circle cx="25" cy="20" r="6" fill="white"/>
+        <circle cx="50" cy="20" r="6" fill="white"/>
+        <circle cx="75" cy="35" r="6" fill="white"/>
+        <circle cx="75" cy="65" r="6" fill="white"/>
+        <circle cx="50" cy="80" r="6" fill="white"/>
+        <circle cx="25" cy="80" r="6" fill="white"/>
+        <circle cx="25" cy="50" r="6" fill="white"/>
+        
+        <!-- Connection lines -->
+        <line x1="25" y1="20" x2="50" y2="20" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="20" x2="75" y2="35" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="75" y1="35" x2="75" y2="65" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="75" y1="65" x2="50" y2="80" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="50" y1="80" x2="25" y2="80" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="25" y1="80" x2="25" y2="50" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        <line x1="25" y1="50" x2="25" y2="20" stroke="white" stroke-width="1.5" opacity="0.6"/>
+        
+        <!-- Inner connections -->
+        <line x1="25" y1="50" x2="50" y2="50" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="2,2"/>
+        <line x1="50" y1="50" x2="75" y2="50" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="2,2"/>
+    </g>
+</svg>
