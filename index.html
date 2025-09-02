@@ -128,9 +128,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            min-width: 650px; /* Increased width to prevent wrapping on desktop */
+            min-width: 650px;
             max-width: 100%;
-            height: 7rem;
+            height: 7rem; /* Increased height for better descender visibility */
         }
         #rotating-text {
             text-align: center;
@@ -213,6 +213,7 @@
                 
                 #rotating-text {
                     min-width: 100% !important;
+                    min-height: 4rem !important; /* Increased min-height for mobile */
                     text-align: center !important;
                 }
             }
@@ -256,6 +257,34 @@
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+        /* Strapline chips */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+            border-radius: 9999px;
+            border: 1px solid rgba(17,24,39,0.08); /* gray-900 @ 8% */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            transition: transform 150ms ease, box-shadow 200ms ease;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .chip:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.10); }
+        .chip .label {
+            position: relative;
+            line-height: 1.25;
+            /* Underline animation */
+            background-image: linear-gradient(currentColor, currentColor);
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            background-size: 0% 2px;
+            transition: background-size 200ms ease;
+        }
+        .chip:hover .label { background-size: 100% 2px; }
+        .chip-blue { background: linear-gradient(135deg, rgba(26,115,232,0.08), rgba(255,255,255,0.9)); border-color: rgba(26,115,232,0.20); }
+        .chip-green { background: linear-gradient(135deg, rgba(52,168,83,0.08), rgba(255,255,255,0.9)); border-color: rgba(52,168,83,0.20); }
+        .chip-purple { background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(255,255,255,0.9)); border-color: rgba(124,58,237,0.20); }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -311,7 +340,7 @@
                     <a href="#use-cases" class="text-gray-700 hover:text-blue-600 transition">Use Cases</a>
                     <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 transition">How It Works</a>
                     <a href="#implementation" class="text-gray-700 hover:text-blue-600 transition">Implementation</a>
-                    <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+
                     <a href="#faq" class="text-gray-700 hover:text-blue-600 transition">FAQ</a>
                 </div>
                 <a href="https://publish.dedi.global/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
@@ -355,26 +384,31 @@
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                     <span class="gradient-text">DeDi.global</span> — Trust Backbone for Public Directories
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
-                    Agent-ready, tamper-resistant, and anchored on-chain.
-                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-lg md:text-xl text-gray-700 mb-12 max-w-5xl mx-auto font-medium">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-blue-600 mr-3"></i>
+                        <span>Agent-Ready</span>
+                    </div>
+                    <span class="hidden sm:inline text-gray-400">•</span>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                        <span>Tamper-Resistant</span>
+                    </div>
+                    <span class="hidden sm:inline text-gray-400">•</span>
+                    <div class="flex items-center">
+                        <i class="fas fa-link text-purple-600 mr-3"></i>
+                        <span>Anchored On-Chain</span>
+                    </div>
+                </div>
                 
-                <!-- CTAs for different audiences -->
-                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                    <div class="bg-white/80 backdrop-blur-sm shadow-xl border border-gray-200 p-8 rounded-2xl max-w-sm hover:shadow-2xl transition-all duration-300">
-                        <h3 class="font-semibold text-xl mb-3">New to DeDi?</h3>
-                        <p class="text-gray-600 mb-6">Discover how decentralized directories solve trust issues</p>
-                        <a href="#use-cases" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
-                            Learn More →
-                        </a>
-                    </div>
-                    <div class="bg-gradient-to-br from-blue-600 to-green-600 p-8 rounded-2xl max-w-sm text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                        <h3 class="font-semibold text-xl mb-3">Ready to Implement?</h3>
-                        <p class="mb-6 opacity-95">Go live in just 10 minutes with DeDi.global SaaS</p>
-                        <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg hover:shadow-lg transition font-semibold">
-                            Start Now →
-                        </a>
-                    </div>
+                <!-- Single CTA -->
+                <div class="flex gap-4 justify-center mb-16">
+                    <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-lg">
+                        Start Free Trial →
+                    </a>
+                    <a href="#use-cases" class="inline-block bg-white border-2 border-gray-300 text-gray-700 px-10 py-4 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold text-lg">
+                        Learn More
+                    </a>
                 </div>
 
                 <!-- Animated Value Proposition -->
@@ -385,12 +419,19 @@
                         <span id="rotating-text" class="gradient-text"></span>
                     </span>
                 </div>
+                <div class="mt-4 flex justify-center">
+                    <a href="https://github.com/LF-Decentralized-Trust-labs/DeDi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs md:text-sm text-gray-700 bg-white/80 backdrop-blur-sm border border-gray-200 px-3 md:px-4 py-1.5 rounded-full shadow-sm hover:shadow-md hover:text-blue-700 transition">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-600/10 to-green-600/10 text-blue-700 font-semibold">Open Standard</span>
+                        <span>Built on the Global Decentralized Directory Protocol</span>
+                        <i class="fab fa-github text-gray-800"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Use Cases Section -->
-    <section id="use-cases" class="py-12 bg-white">
+    <section id="use-cases" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <div class="inline-flex items-center justify-center mb-4">
@@ -421,13 +462,13 @@
                                 </div>
                                 <h3 class="text-2xl font-bold">Public Key Registries</h3>
                             </div>
-                            <p class="text-gray-700 mb-4">
-                                <strong>The Problem:</strong> Public key certificates are buried in websites, 
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong class="block mb-3">The Problem:</strong> Public key certificates are buried in websites, 
                                 rotated frequently, and require manual discovery. There's no seamless way to 
                                 automatically verify authenticity.
                             </p>
-                            <p class="text-gray-700">
-                                <strong>DeDi Solution:</strong> A universal, always-current registry where public keys 
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong class="block mb-3">DeDi Solution:</strong> A universal, always-current registry where public keys 
                                 are instantly discoverable and cryptographically verifiable. No more manual exchanges 
                                 or trust assumptions.
                             </p>
@@ -452,15 +493,15 @@
                                 <div class="space-y-2">
                                     <div class="flex items-center animate-slide-right" style="animation-delay: 0.1s">
                                         <div class="w-3 h-3 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
-                                        <span class="text-sm">JPMorgan Chase trusts Federal Reserve</span>
+                                        <span class="text-sm">International Bank trusts Home Central Bank</span>
                                     </div>
                                     <div class="flex items-center ml-6 animate-slide-right" style="animation-delay: 0.3s">
                                         <div class="w-3 h-3 bg-indigo-500 rounded-full mr-2 animate-pulse"></div>
-                                        <span class="text-sm">Fed recognizes Bank of England</span>
+                                        <span class="text-sm">Home Central Bank recognizes Foreign Central Bank</span>
                                     </div>
                                     <div class="flex items-center ml-12 animate-slide-right" style="animation-delay: 0.5s">
                                         <div class="w-3 h-3 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
-                                        <span class="text-sm">BoE approves Barclays → JPMorgan trusts Barclays</span>
+                                        <span class="text-sm">Foreign Central Bank approves Local Bank → International Bank trusts Local Bank</span>
                                     </div>
                                 </div>
                             </div>
@@ -472,13 +513,13 @@
                                 </div>
                                 <h3 class="text-2xl font-bold">Membership Lists</h3>
                             </div>
-                            <p class="text-gray-700 mb-4">
-                                <strong>The Problem:</strong> Regulators publish member lists (approved banks, 
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong class="block mb-3">The Problem:</strong> Regulators publish member lists (approved banks, 
                                 certified manufacturers, accredited schools) but there's no standardized way 
                                 to consume or verify this information.
                             </p>
-                            <p class="text-gray-700">
-                                <strong>DeDi Solution:</strong> Create chains of trust where organizations can 
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong class="block mb-3">DeDi Solution:</strong> Create chains of trust where organizations can 
                                 recognize each other's registries, building a global web of verifiable memberships.
                             </p>
                         </div>
@@ -495,13 +536,13 @@
                                 </div>
                                 <h3 class="text-2xl font-bold">Revocation Lists</h3>
                             </div>
-                            <p class="text-gray-700 mb-4">
-                                <strong>The Problem:</strong> Credentials expire, licenses get revoked, 
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                <strong class="block mb-3">The Problem:</strong> Credentials expire, licenses get revoked, 
                                 ratings downgrade - but these critical updates are scattered across 
                                 disconnected systems.
                             </p>
-                            <p class="text-gray-700">
-                                <strong>DeDi Solution:</strong> Real-time revocation propagation across 
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong class="block mb-3">DeDi Solution:</strong> Real-time revocation propagation across 
                                 all connected systems. When a credential is revoked, everyone knows instantly.
                             </p>
                         </div>
@@ -521,71 +562,33 @@
                     </div>
                 </div>
 
-                <!-- And Many More Section - No Box -->
-                <div class="text-center mt-8">
-                    <h3 class="text-xl font-bold mb-4 gradient-text">And Many More Use Cases...</h3>
-                    <div class="flex flex-wrap justify-center gap-4 mb-4">
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-certificate text-blue-600 mr-2"></i>
-                            <span class="text-sm font-medium">Professional Licenses</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-award text-green-600 mr-2"></i>
-                            <span class="text-sm font-medium">Accreditations</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-gavel text-purple-600 mr-2"></i>
-                            <span class="text-sm font-medium">Sanctions Lists</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-university text-indigo-600 mr-2"></i>
-                            <span class="text-sm font-medium">Educational Records</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-file-contract text-red-600 mr-2"></i>
-                            <span class="text-sm font-medium">Government Registries</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-star text-yellow-600 mr-2"></i>
-                            <span class="text-sm font-medium">Ratings & Reviews</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-handshake text-orange-600 mr-2"></i>
-                            <span class="text-sm font-medium">Vendor Lists</span>
-                        </div>
-                        <div class="flex items-center bg-gray-50 rounded-full px-4 py-2 shadow-sm use-case-tag">
-                            <i class="fas fa-check-circle text-teal-600 mr-2"></i>
-                            <span class="text-sm font-medium">Compliance Records</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section id="how-it-works" class="py-8 bg-gray-50">
+    <section id="how-it-works" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-4">
-                <div class="inline-flex items-center justify-center mb-2">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center mb-4">
                     <div class="h-1 w-16 bg-gradient-to-r from-green-600 to-blue-600 rounded"></div>
                     <div class="mx-3 p-2 bg-gradient-to-br from-green-100 to-blue-100 rounded-full">
                         <i class="fas fa-exchange-alt text-3xl text-green-600"></i>
                     </div>
                     <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-green-600 rounded"></div>
                 </div>
-                <h2 class="text-4xl font-bold gradient-text mb-2">
-                    How DeDi Transforms Public Registries
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">
+                    Make public registries interoperable, verifiable, and agent ready.
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    DeDi provides a unified, machine-readable interface for accessing essential public information, 
-                    fostering secure and efficient digital transactions.
+                    Transform traditional directories into a unified trust network that works seamlessly across platforms.
                 </p>
             </div>
 
             <!-- Animated Flow Diagram -->
-            <div class="relative max-w-6xl mx-auto mt-4">
-                <svg viewBox="0 0 1200 500" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <div class="relative max-w-6xl mx-auto mb-4">
+                <svg viewBox="0 0 1200 460" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Definitions -->
                     <defs>
                         <linearGradient id="dediGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -624,8 +627,8 @@
                     </defs>
                     
                     <!-- Publishers Circle -->
-                    <g transform="translate(220, 250)">
-                        <circle cx="0" cy="0" r="140" fill="#E8F3FC" stroke="#BCCDE0" stroke-width="1" filter="url(#softShadow)"/>
+                    <g transform="translate(220, 230)">
+                        <circle cx="0" cy="0" r="130" fill="#E8F3FC" stroke="#BCCDE0" stroke-width="1" filter="url(#softShadow)"/>
                         <g>
                             <g transform="translate(0, -80)" class="icon-group" style="animation-delay: 0.1s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#4B9FDB"></text></g>
                             <g transform="translate(70, -40)" class="icon-group" style="animation-delay: 0.2s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#4B9FDB"></text></g>
@@ -634,11 +637,12 @@
                             <g transform="translate(-70, 40)" class="icon-group" style="animation-delay: 0.5s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#4B9FDB"></text></g>
                             <g transform="translate(-70, -40)" class="icon-group" style="animation-delay: 0.6s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#4B9FDB"></text></g>
                         </g>
+                        <text x="0" y="10" text-anchor="middle" font-size="20" font-weight="600" fill="#4B9FDB">Registrars</text>
                     </g>
                     
                     <!-- DeDi Network Circle -->
-                    <g transform="translate(600, 250)">
-                        <circle cx="0" cy="0" r="110" fill="url(#dediGradient)" filter="url(#softShadow)"/>
+                    <g transform="translate(600, 230)">
+                        <circle cx="0" cy="0" r="100" fill="url(#dediGradient)" filter="url(#softShadow)"/>
                         <g class="network-nodes" opacity="0.6">
                             <circle cx="0" cy="-50" r="6" fill="white"/><circle cx="43" cy="-25" r="6" fill="white"/><circle cx="43" cy="25" r="6" fill="white"/><circle cx="0" cy="50" r="6" fill="white"/><circle cx="-43" cy="25" r="6" fill="white"/><circle cx="-43" cy="-25" r="6" fill="white"/>
                             <line x1="0" y1="-50" x2="43" y2="-25" stroke="white" stroke-width="1.5"/><line x1="43" y1="-25" x2="43" y2="25" stroke="white" stroke-width="1.5"/><line x1="43" y1="25" x2="0" y2="50" stroke="white" stroke-width="1.5"/><line x1="0" y1="50" x2="-43" y2="25" stroke="white" stroke-width="1.5"/><line x1="-43" y1="25" x2="-43" y2="-25" stroke="white" stroke-width="1.5"/><line x1="-43" y1="-25" x2="0" y2="-50" stroke="white" stroke-width="1.5"/>
@@ -648,8 +652,8 @@
                     </g>
                     
                     <!-- Verifiers Circle -->
-                    <g transform="translate(980, 250)">
-                        <circle cx="0" cy="0" r="140" fill="#E8F8EC" stroke="#C0DCC8" stroke-width="1" filter="url(#softShadow)"/>
+                    <g transform="translate(980, 230)">
+                        <circle cx="0" cy="0" r="130" fill="#E8F8EC" stroke="#C0DCC8" stroke-width="1" filter="url(#softShadow)"/>
                         <g>
                             <g transform="translate(0, -80)" class="icon-group" style="animation-delay: 0.7s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#34a853"></text></g>
                             <g transform="translate(70, -40)" class="icon-group" style="animation-delay: 0.8s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#34a853"></text></g>
@@ -658,6 +662,7 @@
                             <g transform="translate(-70, 40)" class="icon-group" style="animation-delay: 1.1s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#34a853"></text></g>
                             <g transform="translate(-70, -40)" class="icon-group" style="animation-delay: 1.2s;"><circle cx="0" cy="0" r="22" fill="white"/><text x="0" y="6" text-anchor="middle" class="fas" font-size="20" fill="#34a853"></text></g>
                         </g>
+                        <text x="0" y="10" text-anchor="middle" font-size="20" font-weight="600" fill="#34a853">Verifiers</text>
                     </g>
 
                     <!-- Arrows & Data Packets -->
@@ -676,122 +681,55 @@
                     </g>
                     
                     <!-- Labels -->
-                    <text x="220" y="435" text-anchor="middle" font-size="20" font-weight="600" fill="#333">Registry Publishers</text>
-                    <text x="220" y="460" text-anchor="middle" font-size="16" fill="#666">(Government, Banks, Universities)</text>
-                    <text x="600" y="435" text-anchor="middle" font-size="20" font-weight="600" fill="#333">DeDi Network</text>
-                    <text x="600" y="460" text-anchor="middle" font-size="16" fill="#666">Decentralized Trust Infrastructure</text>
-                    <text x="980" y="435" text-anchor="middle" font-size="20" font-weight="600" fill="#333">Verifiers</text>
-                    <text x="980" y="460" text-anchor="middle" font-size="16" fill="#666">(Businesses, Services, Platforms)</text>
-                    <text x="425" y="170" text-anchor="middle" font-size="16" fill="#4B9FDB" font-weight="500">Upload via DeDi APIs</text>
-                    <text x="775" y="345" text-anchor="middle" font-size="16" fill="#34a853" font-weight="500">Query via DeDi APIs</text>
+                
+                    <text x="425" y="160" text-anchor="middle" font-size="16" fill="#4B9FDB" font-weight="500">Upload via DeDi APIs</text>
+                    <text x="775" y="330" text-anchor="middle" font-size="16" fill="#34a853" font-weight="500">Query via DeDi APIs</text>
                 </svg>
             </div>
 
-            <!-- Key Benefits Grid -->
-            <div class="grid md:grid-cols-3 gap-8 mt-8">
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-lg font-semibold mb-3 text-gray-800">Machine-Readable APIs</h3>
-                    <p class="text-gray-600 text-sm">
-                        Standardized, programmable access with well-known schemas for easy automation 
-                        and seamless integration with existing systems.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
-                    <h3 class="text-lg font-semibold mb-3 text-gray-800">Cryptographic Security</h3>
-                    <p class="text-gray-600 text-sm">
-                        Every record is tamper-resistant with cryptographic guarantees, enabling 
-                        a "trust, but verify" approach for all public information.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
-                    <h3 class="text-lg font-semibold mb-3 text-gray-800">Real-time Updates</h3>
-                    <p class="text-gray-600 text-sm">
-                        Information such as membership statuses, sanctions, and public keys is 
-                        always up-to-date, reducing risks from outdated data.
-                    </p>
+            <!-- Key Pillars - Text descriptions -->
+            <div class="mt-2">
+                <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-gray-700">
+                    <span class="chip chip-blue">
+                        <i class="fas fa-upload text-blue-600 mr-2"></i>
+                        <span class="label font-medium">Publish once using a simple interface</span>
+                    </span>
+                    <span class="text-gray-300 mx-1 md:mx-2">•</span>
+                    <span class="chip chip-green">
+                        <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                        <span class="label font-medium">Trust ensured with cryptographic proofs</span>
+                    </span>
+                    <span class="text-gray-300 mx-1 md:mx-2">•</span>
+                    <span class="chip chip-purple">
+                        <i class="fas fa-globe text-purple-600 mr-2"></i>
+                        <span class="label font-medium">Verifiable by anyone universally</span>
+                    </span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Implementation with DeDi.global -->
-    <section id="implementation" class="py-12 bg-white">
+    <section id="implementation" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <div class="inline-flex items-center justify-center mb-4">
-                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-green-600 rounded"></div>
-                    <div class="mx-3 p-2 bg-gradient-to-br from-blue-100 to-green-100 rounded-full">
-                        <i class="fas fa-rocket text-3xl text-blue-600"></i>
-                    </div>
-                    <div class="h-1 w-16 bg-gradient-to-r from-green-600 to-blue-600 rounded"></div>
-                </div>
+            <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold gradient-text mb-4">
                     Get Started with DeDi.global
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Enterprise SaaS for transforming public registries into cryptographically secure, verifiable directories
+                    Go live in just 10 minutes. No setup fees, no monthly costs for publishing.
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl p-10 text-white shadow-2xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-3xl font-bold mb-6">DeDi.global SaaS Solution</h3>
-                            <ul class="space-y-4 mb-8">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">Live in minutes, not weeks</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">Real-time change propagation</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">99.99% uptime guarantee</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">Advanced analytics dashboard</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">Always up-to-date with latest features</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">Full data portability - export anytime</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-white mt-1 mr-3"></i>
-                                    <span class="text-lg">No vendor lock-in - switch in or out freely</span>
-                                </li>
-                            </ul>
-                            <div class="flex items-center mb-6">
-                                <i class="fas fa-clock mr-3 text-xl"></i>
-                                <span class="text-lg">Setup time: Just 10 minutes</span>
-                            </div>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
-                            <i class="fas fa-link text-6xl mb-4 opacity-80"></i>
-                            <h4 class="text-2xl font-bold mb-4">On-Chain SaaS Solution</h4>
-                            <p class="mb-6 opacity-90">Enterprise-grade SaaS with on-chain cryptographic guarantees. Simple interface, powerful infrastructure.</p>
-                            <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:shadow-lg transition font-bold text-lg">
-                                Start Free Trial →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="max-w-5xl mx-auto">
                 <!-- Simple Steps -->
-                <div class="mt-12">
-                    <h3 class="text-3xl font-bold text-center mb-16">Get started in 3 steps</h3>
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-12">Start in 3 simple steps</h3>
                     <div class="relative max-w-4xl mx-auto px-4">
                         <!-- Horizontal Connecting Line for Desktop -->
                         <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-300"></div>
                         
-                        <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-8">
+                        <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-8">
                             <!-- Step 1 -->
                             <div class="flex items-start md:flex-col md:items-center text-left md:text-center w-full">
                                 <div class="relative z-10 bg-white p-2 rounded-full">
@@ -835,203 +773,73 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center mt-16">
-                        <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-xl font-bold">
-                            <i class="fas fa-gift mr-3"></i>
-                            Start for Free Today
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Value -->
-    <section class="py-12 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <div class="inline-flex items-center justify-center mb-4">
-                    <div class="h-1 w-16 bg-gradient-to-r from-green-600 to-blue-600 rounded"></div>
-                    <div class="mx-3 p-2 bg-gradient-to-br from-green-100 to-blue-100 rounded-full">
-                        <i class="fas fa-star text-3xl text-green-600"></i>
-                    </div>
-                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-green-600 rounded"></div>
-                </div>
-                <h2 class="text-4xl font-bold gradient-text mb-4">
-                    The DeDi Advantage
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-shield-alt text-3xl text-blue-600 mb-4"></i>
-                    <h3 class="font-semibold mb-2">Cryptographic Security</h3>
-                    <p class="text-gray-600 text-sm">Every entry is cryptographically signed and verifiable</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-globe text-3xl text-blue-600 mb-4"></i>
-                    <h3 class="font-semibold mb-2">Universal Accessibility</h3>
-                    <p class="text-gray-600 text-sm">Can be used by anyone for any kind of document in any form</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-sync text-3xl text-blue-600 mb-4"></i>
-                    <h3 class="font-semibold mb-2">Real-time Updates</h3>
-                    <p class="text-gray-600 text-sm">Changes propagate instantly across the network</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-plug text-3xl text-blue-600 mb-4"></i>
-                    <h3 class="font-semibold mb-2">Easy Integration</h3>
-                    <p class="text-gray-600 text-sm">Simple APIs for uploads, queries, and any system</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-user-shield text-3xl text-blue-600 mb-4"></i>
-                    <h3 class="font-semibold mb-2">Data Ownership</h3>
-                    <p class="text-gray-600 text-sm">You own and control your data completely</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <div class="inline-flex items-center justify-center mb-4">
-                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-green-600 rounded"></div>
-                    <div class="mx-3 p-2 bg-gradient-to-br from-blue-100 to-green-100 rounded-full">
-                        <i class="fas fa-tag text-3xl text-blue-600"></i>
-                    </div>
-                    <div class="h-1 w-16 bg-gradient-to-r from-green-600 to-blue-600 rounded"></div>
-                </div>
-                <h2 class="text-4xl font-bold gradient-text mb-4">
-                    Simple, Transparent Pricing
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Start free and scale as you grow. No hidden fees, no surprises.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Free Tier -->
-                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 flex flex-col">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
-                        <div class="text-4xl font-bold mb-2">Free</div>
-                        <p class="text-gray-600">Perfect for testing and small registries</p>
-                    </div>
-                    <ul class="space-y-3 mb-8 flex-grow">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Up to 5 registries with 500 records each</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>1,000 API calls/month</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Basic support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Community access</span>
-                        </li>
-                    </ul>
-                    <a href="https://publish.dedi.global/" target="_blank" class="block w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition text-center">
-                        Get Started Free
-                    </a>
                 </div>
 
-                <!-- Professional Tier -->
-                <div class="bg-gradient-to-br from-blue-600 to-green-600 rounded-xl p-8 text-white transform scale-105 shadow-2xl relative">
-                    <div class="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold">
-                        MOST POPULAR
+                <!-- Key Benefits -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-10 shadow-lg">
+                        <h3 class="text-3xl font-bold mb-8 text-center gradient-text">Why DeDi.global?</h3>
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-3xl mx-auto">
+                            <div class="space-y-5">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Enterprise-grade infrastructure</h4>
+                                        <p class="text-gray-600 text-sm mt-1">99.99% uptime with global CDN</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">No vendor lock-in</h4>
+                                        <p class="text-gray-600 text-sm mt-1">Export your data anytime</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Advanced analytics</h4>
+                                        <p class="text-gray-600 text-sm mt-1">Track usage and access patterns</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-5">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">On-chain anchoring</h4>
+                                        <p class="text-gray-600 text-sm mt-1">Cryptographic proof of authenticity</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Real-time updates</h4>
+                                        <p class="text-gray-600 text-sm mt-1">Changes propagate instantly</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-0.5 mr-3 text-lg"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">API-first design</h4>
+                                        <p class="text-gray-600 text-sm mt-1">Agent-ready from day one</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-10">
+                            <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-bold">
+                                Publish your registries for free →
+                            </a>
+                        </div>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
-                        <div class="text-4xl font-bold mb-2">$99<span class="text-xl font-normal">/month</span></div>
-                        <p class="opacity-90">For growing organizations</p>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>Up to 100 registries and 10,000 records</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>100,000 API calls/month</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>Priority support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>Custom domain</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>Advanced analytics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-white mt-1 mr-3"></i>
-                            <span>99.9% uptime SLA</span>
-                        </li>
-                    </ul>
-                    <a href="https://publish.dedi.global/" target="_blank" class="block w-full bg-white text-blue-600 py-3 rounded-lg hover:shadow-lg transition font-semibold text-center">
-                        Start Free Trial
-                    </a>
                 </div>
-
-                <!-- Enterprise Tier -->
-                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 flex flex-col">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                        <div class="text-4xl font-bold mb-2">Custom</div>
-                        <p class="text-gray-600">For large-scale deployments</p>
-                    </div>
-                    <ul class="space-y-3 mb-8 flex-grow">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Unlimited registries and records</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Unlimited API calls</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Dedicated support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>On-premise option</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Custom integrations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>99.99% uptime SLA</span>
-                        </li>
-                    </ul>
-                    <a href="https://form.typeform.com/to/EU7ypU6e" target="_blank" class="block w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition text-center">
-                        Contact Sales
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <p class="text-gray-600">
-                    All plans include: SSL encryption, API access, real-time updates, and basic analytics
-                </p>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-12 bg-gray-50">
+    <section id="faq" class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-4xl font-bold gradient-text mb-4">
@@ -1044,13 +852,13 @@
                     <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
                         <div class="flex items-center">
                             <i class="fas fa-info-circle text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">What exactly is DeDi?</h3>
+                            <h3 class="font-semibold text-lg">What exactly is DeDi.global?</h3>
                         </div>
                         <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-4 bg-white/80">
                         <p class="text-gray-700 leading-relaxed">
-                            DeDi (Decentralized Directory) is an infrastructure that transforms traditional public registries 
+                            DeDi.global (Decentralized Directory) is an infrastructure that transforms traditional public registries 
                             into cryptographically secure, instantly verifiable directories. Think of it as a universal 
                             trust layer for any public information your organization needs to share.
                         </p>
@@ -1067,9 +875,9 @@
                     </button>
                     <div class="faq-content hidden px-6 pb-4 bg-white/80">
                         <p class="text-gray-700 leading-relaxed">
-                            Unlike traditional databases, DeDi provides cryptographic proof of authenticity, 
-                            decentralized availability (no single point of failure), and automatic trust propagation 
-                            between recognized organizations. It's not just storing data - it's creating verifiable truth.
+                            Unlike traditional databases, DeDi.global provides cryptographic proof of authenticity, 
+                            decentralized availability (no single point of failure), unifed discoverability and automatic trust propagation 
+                            between recognized organizations. 
                         </p>
                     </div>
                 </div>
@@ -1084,8 +892,8 @@
                     </button>
                     <div class="faq-content hidden px-6 pb-4 bg-white/80">
                         <p class="text-gray-700 leading-relaxed">
-                            No! While DeDi uses advanced cryptographic techniques, we've abstracted all the complexity. 
-                            DeDi.global requires zero technical knowledge - if you can upload a file, you can use DeDi.
+                            No! While DeDi.global uses advanced cryptographic techniques, we've abstracted all the complexity. 
+                            DeDi.global requires zero technical knowledge - if you can upload a file, you can use this.
                         </p>
                     </div>
                 </div>
@@ -1107,18 +915,22 @@
                     </div>
                 </div>
 
+
+
                 <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
                     <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
                         <div class="flex items-center">
-                            <i class="fas fa-rocket text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">How quickly can I get started?</h3>
+                            <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
+                            <h3 class="font-semibold text-lg">How much does DeDi.global cost?</h3>
                         </div>
                         <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-4 bg-white/80">
                         <p class="text-gray-700 leading-relaxed">
-                            With DeDi.global, you can be live in just 10 minutes! Simply sign up, upload your registry 
-                            (CSV, JSON, or API connection), and share your secure DeDi endpoint. It's that easy - no technical setup required.
+                            <strong>Publishing registries is completely free!</strong> As part of our launch offer, 
+                            everything is currently free - no setup fees, no monthly costs, no hidden charges. 
+                            In the future, pricing may apply to new directories created after the launch period, 
+                            but early adopters will continue to enjoy free publishing for their existing registries.
                         </p>
                     </div>
                 </div>
@@ -1143,33 +955,16 @@
                 <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
                     <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
                         <div class="flex items-center">
-                            <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">How much does it cost?</h3>
-                        </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            DeDi.global starts with a free tier perfect for small registries and testing. Paid plans scale based 
-                            on registry size and query volume, ensuring you only pay for what you use. Check our pricing section 
-                            for detailed plan information.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
                             <i class="fas fa-exchange-alt text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">Can I migrate my existing registry?</h3>
+                            <h3 class="font-semibold text-lg">Can I integrate with my existing systems?</h3>
                         </div>
                         <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-4 bg-white/80">
                         <p class="text-gray-700 leading-relaxed">
                             Yes! We support bulk imports from CSV, JSON, XML, and direct API connections. 
-                            Our migration tools preserve all your existing data while adding DeDi's 
-                            cryptographic verification layer.
+                            DeDi is designed to work alongside your existing infrastructure, adding a 
+                            cryptographic verification layer without disrupting current workflows.
                         </p>
                     </div>
                 </div>
@@ -1177,48 +972,28 @@
         </div>
     </section>
 
-    <!-- CTA Section with Integrated Demo -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-6">
-                    Ready to Build Trust at Scale?
-                </h2>
-                <p class="text-xl mb-8 opacity-90">
-                    Join organizations worldwide who are transforming how public information is shared and verified.
-                </p>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-                <!-- Left: Quick Start -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center flex-1">
-                    <i class="fas fa-rocket text-2xl mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Start Building</h3>
-                    <p class="mb-3 opacity-90 text-xs">
-                        Free tier, no credit card
-                    </p>
-                    <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-white text-blue-600 px-4 py-2 rounded text-sm font-semibold hover:shadow-lg transition">
-                        Start Free Trial →
-                    </a>
-                </div>
-
-                <!-- Right: Get in Touch -->
-                <div class="bg-white rounded-lg p-4 text-gray-900 text-center flex-1">
-                    <i class="fas fa-comments text-2xl text-blue-600 mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Get in Touch</h3>
-                    <p class="text-gray-600 text-xs mb-3">
-                        Questions? Let's talk
-                    </p>
-                    <a href="https://form.typeform.com/to/EU7ypU6e" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold hover:shadow-lg transition">
-                        Contact Us →
-                    </a>
-                </div>
+    <!-- CTA Section -->
+    <section class="py-12 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Build Trust at Scale?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join organizations worldwide transforming public information sharing.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://publish.dedi.global/" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                    Start Free Trial →
+                </a>
+                <a href="https://form.typeform.com/to/EU7ypU6e" target="_blank" class="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                    Contact Sales
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Partners Carousel Banner -->
-    <section class="py-8 bg-gray-50 border-t border-gray-200 overflow-hidden">
+    <section class="py-4 bg-gray-50 border-t border-gray-200 overflow-hidden">
         <style>
             @keyframes scroll {
                 0% { transform: translateX(0); }
@@ -1347,7 +1122,7 @@
                     <h4 class="text-white font-semibold mb-4">Product</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#use-cases" class="hover:text-white transition">Features</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+
                         <li><a href="https://publish.dedi.global/" target="_blank" class="hover:text-white transition">Get Started</a></li>
                     </ul>
                 </div>
