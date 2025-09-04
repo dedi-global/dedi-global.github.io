@@ -839,133 +839,138 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl font-bold gradient-text mb-4">
-                    Frequently Asked Questions
-                </h2>
-            </div>
-
-            <div class="space-y-3">
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-info-circle text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">What exactly is DeDi.global?</h3>
-                        </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            DeDi.global (Decentralized Directory) is an infrastructure that transforms traditional public registries 
-                            into cryptographically secure, instantly verifiable directories. Think of it as a universal 
-                            trust layer for any public information your organization needs to share.
-                        </p>
+    <section id="faq" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8 lg:gap-16 items-start">
+                <!-- Left side - Title -->
+                <div class="lg:col-span-1 lg:sticky lg:top-24">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                        <span class="gradient-text">Frequently Asked</span><br>
+                        <span class="text-gray-900">Questions</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6">
+                        Everything you need to know about DeDi.global. Can't find what you're looking for? 
+                        <a href="https://form.typeform.com/to/EU7ypU6e" target="_blank" class="text-blue-600 hover:text-blue-700 underline">Contact our team</a>.
+                    </p>
+                    <div class="hidden lg:block">
+                        <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-green-600 rounded"></div>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-database text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">How is this different from a regular database?</h3>
+                <!-- Right side - Questions -->
+                <div class="lg:col-span-2">
+                    <div class="space-y-0">
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">What exactly is DeDi.global?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    DeDi.global (Decentralized Directory) is an infrastructure that transforms traditional public registries 
+                                    into cryptographically secure, instantly verifiable directories. Think of it as a universal 
+                                    trust layer for any public information your organization needs to share.
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            Unlike traditional databases, DeDi.global provides cryptographic proof of authenticity, 
-                            decentralized availability (no single point of failure), unifed discoverability and automatic trust propagation 
-                            between recognized organizations. 
-                        </p>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">Do I need blockchain knowledge to use DeDi?</h3>
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">How is this different from a regular database?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Unlike traditional databases, DeDi.global provides cryptographic proof of authenticity, 
+                                    decentralized availability (no single point of failure), unified discoverability and automatic trust propagation 
+                                    between recognized organizations. 
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            No! While DeDi.global uses advanced cryptographic techniques, we've abstracted all the complexity. 
-                            DeDi.global requires zero technical knowledge - if you can upload a file, you can use this.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-list-alt text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">What types of registries work best with DeDi?</h3>
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">Do I need blockchain knowledge to use DeDi?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    No! While DeDi.global uses advanced cryptographic techniques, we've abstracted all the complexity. 
+                                    DeDi.global requires zero technical knowledge - if you can upload a file, you can use this.
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            Any public information that needs to be verified: member lists, license registries, 
-                            public keys, certificates, approved vendor lists, accreditation records, and more. 
-                            If it's public and needs trust, DeDi can help.
-                        </p>
-                    </div>
-                </div>
 
-
-
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">How much does DeDi.global cost?</h3>
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">What types of registries work best with DeDi?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Any public information that needs to be verified: member lists, license registries, 
+                                    public keys, certificates, approved vendor lists, accreditation records, and more. 
+                                    If it's public and needs trust, DeDi can help.
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            <strong>Publishing registries is completely free!</strong> As part of our launch offer, 
-                            everything is currently free - no setup fees, no monthly costs, no hidden charges. 
-                            In the future, pricing may apply to new directories created after the launch period, 
-                            but early adopters will continue to enjoy free publishing for their existing registries.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">What about data privacy and compliance?</h3>
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">How much does DeDi.global cost?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    <strong>Publishing registries is completely free!</strong> As part of our launch offer, 
+                                    everything is currently free - no setup fees, no monthly costs, no hidden charges. 
+                                    In the future, pricing may apply to new directories created after the launch period, 
+                                    but early adopters will continue to enjoy free publishing for their existing registries.
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            DeDi is designed for PUBLIC registries only. All data shared through DeDi should already 
-                            be public information. We provide audit trails, access logs, and comply with major 
-                            data protection regulations for the infrastructure itself.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md border-l-4 border-blue-500 overflow-hidden hover:shadow-lg transition-shadow">
-                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/50 focus:outline-none transition-colors">
-                        <div class="flex items-center">
-                            <i class="fas fa-exchange-alt text-blue-600 mr-3"></i>
-                            <h3 class="font-semibold text-lg">Can I integrate with my existing systems?</h3>
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">What about data privacy and compliance?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    DeDi is designed for PUBLIC registries only. All data shared through DeDi should already 
+                                    be public information. We provide audit trails, access logs, and comply with major 
+                                    data protection regulations for the infrastructure itself.
+                                </p>
+                            </div>
                         </div>
-                        <i class="fas fa-chevron-down faq-arrow transform transition-transform duration-200 text-blue-600"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-4 bg-white/80">
-                        <p class="text-gray-700 leading-relaxed">
-                            Yes! We support bulk imports from CSV, JSON, XML, and direct API connections. 
-                            DeDi is designed to work alongside your existing infrastructure, adding a 
-                            cryptographic verification layer without disrupting current workflows.
-                        </p>
+
+                        <div class="group border-b border-gray-200 hover:border-blue-200 transition-colors">
+                            <button class="faq-toggle w-full py-6 text-left flex items-center justify-between hover:bg-gradient-to-r hover:from-transparent hover:to-blue-50/30 focus:outline-none transition-all rounded-lg px-2">
+                                <h3 class="font-medium text-gray-900 pr-8 group-hover:text-blue-700 transition-colors">Can I integrate with my existing systems?</h3>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-plus faq-icon text-xs transition-transform duration-200"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden pb-6 px-2">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Yes! We support bulk imports from CSV, JSON, XML, and direct API connections. 
+                                    DeDi is designed to work alongside your existing infrastructure, adding a 
+                                    cryptographic verification layer without disrupting current workflows.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1173,16 +1178,18 @@
             faqToggles.forEach(toggle => {
                 toggle.addEventListener('click', function() {
                     const content = this.nextElementSibling;
-                    const arrow = this.querySelector('.faq-arrow');
+                    const icon = this.querySelector('.faq-icon');
                     
                     if (content.classList.contains('hidden')) {
                         // Show content
                         content.classList.remove('hidden');
-                        arrow.classList.add('rotate-180');
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
                     } else {
                         // Hide content
                         content.classList.add('hidden');
-                        arrow.classList.remove('rotate-180');
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
                     }
                 });
             });
